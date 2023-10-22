@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material
+  m_Name: URP2.5D
   m_Shader: {fileID: -6465566751694194690, guid: cc828728f34b42b42a7aaed3ca0ae785, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
