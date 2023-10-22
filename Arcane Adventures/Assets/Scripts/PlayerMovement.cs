@@ -41,8 +41,8 @@ public class PlayerControl : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
 
-        animator.SetFloat("Speed", Mathf.Abs(x));
-        animator.SetFloat("VerticalSpeed", Mathf.Abs(y));
+        //animator.SetFloat("Speed", Mathf.Abs(x));
+        //animator.SetFloat("VerticalSpeed", Mathf.Abs(y));
         Vector3 moveDir = new Vector3(x, 0, (float)(y * (speed / 1.6)));
 
 
