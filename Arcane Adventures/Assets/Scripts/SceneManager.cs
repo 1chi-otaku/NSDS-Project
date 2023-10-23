@@ -9,4 +9,9 @@ public class Scene : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void CloseUnityApplication()
+    {
+        Application.Quit();
+    }
 }
