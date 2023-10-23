@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
@@ -16,7 +17,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
 
     private GameObject player;
     [SerializeField] GameObject player_prefab;
-
     List<RoomInfo> allRooms = new List<RoomInfo>();
 
     void Start()
@@ -24,10 +24,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.ConnectToRegion(region);
 
-        if(SceneManager.GetActiveScene().name == "GameScene1")
+        if (PhotonNetwork.IsConnected && PhotonNetwork.InRoom)
         {
-            player = PhotonNetwork.Instantiate(player_prefab.name, Vector3.zero, Quaternion.identity);
-            player.GetComponent<MeshRenderer>().material.color = Color.red;
+            PhotonNetwork.Instantiate(player_prefab.name, Vector3.zero, Quaternion.identity);
+            Debug.Log("Пользователь подключен.");
+        }
+        else
+        {
+            Debug.Log("Пользователь не подключен.");
         }
     }
 
